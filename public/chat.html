@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Chat</title>
+</head>
+<body class="container">
+    <h1>Bienvenido al chat<span> </span> ! </h1>
+
+    <div class="row mt-5">
+
+        <div class="col-sm-6">
+            <h3>Enviar mensaje</h3>
+            <hr>
+            <input type="text"
+                    id="txtSocketID"
+                    class="form-control mb-2"
+                    placeholder="ID"
+                    autocomplete="off"
+                    title="Ingrese un ID para enviar un mensaje privado">
+            <input type="text"
+                    id="txtMensaje"
+                    class="form-control mb-2"
+                    placeholder="Mensaje"
+                    autocomplete="off">
+            <button class="btn btn-primary center" id="btnEnviarMensaje">Enviar mensaje</button>
+            
+            <h3>Usuarios conectados</h3>
+            <hr>
+            <ul id="ulUsuariosConectados"></ul>
+        </div>
+
+        <div class="col-sm-6">
+            <h3>Chat</h3>
+            <hr>
+            <ul id="ulMensajes"></ul>
+        </div>
+    </div>
+
+    <button id="btnSalir" class="btn btn-danger" ty>Logout</button>
+    <script src="./socket.io/socket.io.js"></script>
+    <script type="module" src="./js/SC_chat.js"></script>
+</body>
+</html>
