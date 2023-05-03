@@ -54,7 +54,7 @@ export const login=async(req,res)=>{
         
         //Buscamos en la DB a un usuario que tenga ese email
         const usuarioEncontrado=await userModel.findOne({email})
-        
+        //console.log(usuarioEncontrado)
         if(usuarioEncontrado){
                 //Si encuentra un usuario, verifiquemos que las contraseñas coincidan
                 const passwordCompare= await bcrypt.compare(password,usuarioEncontrado.password)

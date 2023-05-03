@@ -29,6 +29,6 @@ export const crearUsuario=async (req,res)=>{
         usuarioBD.save()
 
         
-        res.redirect('http://localhost:8080')
+        res.redirect('/')
     }
     

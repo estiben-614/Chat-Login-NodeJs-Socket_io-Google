@@ -84,7 +84,7 @@ const conectarSocket=async()=>{
     //TODO: Mensajes privados
     socket.on("mensajePrivado",(mensaje,nombreEnvia)=>{
       //mensaje tiene la propiedad mensaje
-
+      console.log(mensaje)
       const mensajesMostrados=ulMensajes.childElementCount
       if(mensajesMostrados<10){
         ulMensajes.innerHTML+=`<li style=" background-color:yellow"> <strong>${nombreEnvia}</strong> ${mensaje.mensaje}</li>`
@@ -92,7 +92,7 @@ const conectarSocket=async()=>{
       else{
         const primerMensaje=ulMensajes.firstChild
           ulMensajes.removeChild(primerMensaje)
-          ulMensajes.innerHTML+=`<li style=" background-color:yellow"> <strong>${nombreEnvia}</strong> ${mensaje}</li>`
+          ulMensajes.innerHTML+=`<li style=" background-color:yellow"> <strong>${nombreEnvia}</strong> ${mensaje.mensaje}</li>`
         }
     })
   
